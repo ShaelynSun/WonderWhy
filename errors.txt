@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/script/supermarket.rpy", line 33: expected menuitem
+    jump spmin
+    ^
+
+Ren'Py Version: Ren'Py 7.4.4.1439
+Sun Jun 27 17:48:14 2021
