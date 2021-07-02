@@ -31,7 +31,7 @@ label start:
             if len_name != 0:
                 p_name = input_name
                 break
-    define f = Character("[p_name]")
+    define f = Character("[p_name]", image="finn")
     show me shy2
     s "Hi [p_name], I'm so glad to see you here! "
     show me normal
@@ -39,24 +39,62 @@ label start:
     hide me normal
     with fade
 
+    image side finn n = "images/main/finn daily normal.png"
+    f n "I decide to go to......"
     define mt = 3
-    menu:
-        "Company":
-            jump company
-            "Going to the company. . . "
-        "Home":
-            jump home
-            "Going back home. . . "
-        "Supermarket":
-            jump supermaket
+    jump scene_choices
 
     return
+
+label scene_choices:
+    if mt == 3:
+        scene city day
+        menu:
+            "Try to go to these places to learn about your life."
+            "Company":
+                "Going to the company. . . "
+                jump company
+            "Home":
+                "Going back home. . . "
+                jump home
+            "Supermarket":
+                "Going to the supermarket. . . "
+                jump supermaket
+    elif mt == 2:
+        scene city dusk
+        menu:
+            "Try to go to these places to learn about your life."
+            "Company":
+                "Going to the company. . . "
+                jump company
+            "Home":
+                "Going back home. . . "
+                jump home
+            "Supermarket":
+                "Going to the supermarket. . . "
+                jump supermaket
+    else:
+        scene city light
+        menu:
+            "Try to go to these places to learn about your life."
+            "Company":
+                "Going to the company. . . "
+                jump company
+            "Home":
+                "Going back home. . . "
+                jump home
+            "Supermarket":
+                "Going to the supermarket. . . "
+                jump supermaket
+    return
+
+
 
 label before_main_menu:
     scene purple
     show logo2
     with dissolve
-    # pause
+#    pause
     hide logo2
     with dissolve
 

@@ -1,1 +1,29 @@
 label company:
+    if mt == 3:
+        $ mt -= 1
+        menu:
+            "test, mt = [mt]"
+            "Return":
+                jump scene_choices
+    elif mt == 2:
+        $ mt -= 1
+        menu:
+            "test, mt = [mt]"
+            "Return":
+                jump scene_choices
+    elif mt == 1:
+        $ mt -= 1
+        menu:
+            "test, mt = [mt]"
+            "Return":
+                jump scene_choices
+    else:
+        "You have wasted all your chances."
+        menu:
+            "How about......"
+            "Re-choose those places":
+                $ mt = 3
+                jump scene_choices
+            "Skip these pressure test":
+                jump meet_alice # not yet
+    return

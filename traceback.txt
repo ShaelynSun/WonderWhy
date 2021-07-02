@@ -1,32 +1,22 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script/supermarket.rpy", line 7, in script
-    "It's daytime, and there are no discounts on food in the supermarket,
-KeyError: u'\n'
+  File "game/script/supermarket.rpy", line 64, in script
+    jump Bread
+ScriptError: could not find label 'Bread'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script/supermarket.rpy", line 7, in script
-    "It's daytime, and there are no discounts on food in the supermarket,
-  File "/Applications/renpy-7.4.4-sdk/renpy/ast.py", line 715, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "/Applications/renpy-7.4.4-sdk/renpy/exports.py", line 1393, in say
-    who(what, *args, **kwargs)
-  File "/Applications/renpy-7.4.4-sdk/renpy/character.py", line 1190, in __call__
-    what = what_pattern.replace("[what]", sub(what, translate=True))
-  File "/Applications/renpy-7.4.4-sdk/renpy/character.py", line 1179, in sub
-    return renpy.substitutions.substitute(s, scope=scope, force=force, translate=translate)[0]
-  File "/Applications/renpy-7.4.4-sdk/renpy/substitutions.py", line 270, in substitute
-    s = formatter.vformat(s, (), kwargs)
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python2.7/string.py", line 563, in vformat
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python2.7/string.py", line 585, in _vformat
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python2.7/string.py", line 646, in get_field
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python2.7/string.py", line 605, in get_value
-KeyError: u'\n'
+  File "game/script/supermarket.rpy", line 64, in script
+    jump Bread
+  File "/Applications/renpy-7.4.4-sdk/renpy/ast.py", line 1711, in execute
+    rv = renpy.game.script.lookup(target)
+  File "/Applications/renpy-7.4.4-sdk/renpy/script.py", line 910, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'Bread'.
 
 Darwin-20.5.0-x86_64-i386-64bit
 Ren'Py 7.4.4.1439
 WonderWhy 1.0
-Sun Jun 27 17:23:52 2021
+Wed Jun 30 22:05:21 2021

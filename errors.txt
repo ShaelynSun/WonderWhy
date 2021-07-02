@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script/supermarket.rpy", line 33: expected menuitem
-    jump spmin
+File "game/script/script.rpy", line 52: expected menuitem
+    f n "I decide to go to......"
     ^
 
 Ren'Py Version: Ren'Py 7.4.4.1439
-Sun Jun 27 17:48:14 2021
+Fri Jul  2 14:07:04 2021
