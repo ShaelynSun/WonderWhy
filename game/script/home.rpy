@@ -1,8 +1,6 @@
 label home:
     if mt == 3:
         $ mt -= 1
-        scene flat day
-        with Fade(1.0, 0.0, 1.0)
         scene bedroom day
         with fade
         menu:
@@ -11,8 +9,6 @@ label home:
                 jump scene_choices
     elif mt == 2:
         $ mt -= 1
-        scene flat dusk
-        with Fade(1.0, 0.0, 1.0)
         scene bedroom dusk
         with fade
         menu:
@@ -21,8 +17,6 @@ label home:
                 jump scene_choices
     elif mt == 1:
         $ mt -= 1
-        scene flat night
-        with Fade(1.0, 0.0, 1.0)
         scene bedroom night
         with fade
         menu:

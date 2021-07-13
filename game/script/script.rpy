@@ -1,6 +1,5 @@
 define a = Character("Alice ")
 define c = Character("Charles")
-define s = Character ("Shaelyn")
 
 define config.say_attribute_transition = dissolve
 
@@ -15,13 +14,11 @@ label start:
     play music "music/bgm/clean morning.mp3"
     scene city day
     with dissolve
-    show me normal
-    s "Hi! How are you? Welcome to {b} WonderWhy {b}"
-    s "The name of WonderWhy is inspired by ‘Wonderland’.
+    "Hi! How are you? Welcome to {b} WonderWhy {b}"
+    "The name of WonderWhy is inspired by ‘Wonderland’.
         This is like a virtual world. But......"
-    show me shy1
-    s "But who knows? Can we really clarify the boundary between virtual and reality?"
-    s "Now, may I get your name?"
+    "But who knows? Can we really clarify the boundary between virtual and reality?"
+    "Now, may I have your name?"
     python:
         p_name = "Finn"
         while True:
@@ -32,15 +29,21 @@ label start:
                 p_name = input_name
                 break
     define f = Character("[p_name]", image="finn")
-    show me shy2
-    s "Hi [p_name], I'm so glad to see you here! "
-    show me normal
-    s "Now try to go to these places to learn about your life."
-    hide me normal
-    with fade
-
-    image side finn n = "images/main/finn daily normal.png"
-    f n "I decide to go to......"
+    "Hi [p_name], I'm so glad to see you here! "
+    menu:
+        "Please confirm your gender to generate your look."
+        "Male (not yet)":
+            $ define sex = 1
+            call screen create_male
+        "Female":
+            $ define sex = 0
+            call screen create_female
+    $ quick_menu = True
+    show finn:
+        pos(400, 50)
+        zoom 0.5
+    "You've created your look!"
+    "Now try to go to these places to learn about your life."
     define mt = 3
     jump scene_choices
 
@@ -50,7 +53,7 @@ label scene_choices:
     if mt == 3:
         scene city day
         menu:
-            "Try to go to these places to learn about your life."
+            "I decide to go to......"
             "Company":
                 "Going to the company. . . "
                 jump company

@@ -1,22 +1,68 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script/supermarket.rpy", line 64, in script
-    jump Bread
-ScriptError: could not find label 'Bread'.
+  File "game/script/script.rpy", line 38, in script
+    call screen create_female
+  File "renpy/common/000statements.rpy", line 570, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "renpy/common/00action_data.rpy", line 79, in get_selected
+    return __get_field(self.object, self.field, self.kind) == self.value
+  File "renpy/common/00action_data.rpy", line 39, in _m1_00action_data__get_field
+    raise NameError("The {} {} does not exist.".format(kind, name))
+NameError: The variable acc does not exist.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script/supermarket.rpy", line 64, in script
-    jump Bread
-  File "/Applications/renpy-7.4.4-sdk/renpy/ast.py", line 1711, in execute
-    rv = renpy.game.script.lookup(target)
-  File "/Applications/renpy-7.4.4-sdk/renpy/script.py", line 910, in lookup
-    raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'Bread'.
+  File "game/script/script.rpy", line 38, in script
+    call screen create_female
+  File "/Applications/renpy-7.4.4-sdk/renpy/ast.py", line 1969, in execute
+    self.call("execute")
+  File "/Applications/renpy-7.4.4-sdk/renpy/ast.py", line 1957, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "/Applications/renpy-7.4.4-sdk/renpy/statements.py", line 278, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 570, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "/Applications/renpy-7.4.4-sdk/renpy/exports.py", line 2983, in call_screen
+    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
+  File "/Applications/renpy-7.4.4-sdk/renpy/ui.py", line 298, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "/Applications/renpy-7.4.4-sdk/renpy/display/core.py", line 3101, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs)
+  File "/Applications/renpy-7.4.4-sdk/renpy/display/core.py", line 3512, in interact_core
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "/Applications/renpy-7.4.4-sdk/renpy/display/core.py", line 567, in visit_all
+    d.visit_all(callback, seen)
+  File "/Applications/renpy-7.4.4-sdk/renpy/display/core.py", line 567, in visit_all
+    d.visit_all(callback, seen)
+  File "/Applications/renpy-7.4.4-sdk/renpy/display/core.py", line 567, in visit_all
+    d.visit_all(callback, seen)
+  File "/Applications/renpy-7.4.4-sdk/renpy/display/screen.py", line 437, in visit_all
+    self.child.visit_all(callback, seen=None)
+  File "/Applications/renpy-7.4.4-sdk/renpy/display/core.py", line 567, in visit_all
+    d.visit_all(callback, seen)
+  File "/Applications/renpy-7.4.4-sdk/renpy/display/core.py", line 567, in visit_all
+    d.visit_all(callback, seen)
+  File "/Applications/renpy-7.4.4-sdk/renpy/display/core.py", line 567, in visit_all
+    d.visit_all(callback, seen)
+  File "/Applications/renpy-7.4.4-sdk/renpy/display/core.py", line 569, in visit_all
+    callback(self)
+  File "/Applications/renpy-7.4.4-sdk/renpy/display/core.py", line 3512, in <lambda>
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "/Applications/renpy-7.4.4-sdk/renpy/display/behavior.py", line 870, in per_interact
+    if self.is_selected():
+  File "/Applications/renpy-7.4.4-sdk/renpy/display/behavior.py", line 858, in is_selected
+    return is_selected(self.action)
+  File "/Applications/renpy-7.4.4-sdk/renpy/display/behavior.py", line 400, in is_selected
+    return action.get_selected()
+  File "renpy/common/00action_data.rpy", line 79, in get_selected
+    return __get_field(self.object, self.field, self.kind) == self.value
+  File "renpy/common/00action_data.rpy", line 39, in _m1_00action_data__get_field
+    raise NameError("The {} {} does not exist.".format(kind, name))
+NameError: The variable acc does not exist.
 
 Darwin-20.5.0-x86_64-i386-64bit
 Ren'Py 7.4.4.1439
 WonderWhy 1.0
-Wed Jun 30 22:05:21 2021
+Tue Jul 13 21:57:44 2021

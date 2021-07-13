@@ -198,3 +198,9 @@ label quitshopping:
                 "Sccess to pay"
                 jump meet_alice
     return
+
+label meet_alice:
+    scene son
+    with Fade(1.0, 0.0, 1.0)
+    show alice home
+    return
