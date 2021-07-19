@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script/script.rpy", line 52: expected menuitem
-    f n "I decide to go to......"
-    ^
+File "game/script/home.rpy", line 114: expected ':' not found.
+    "The appearance"：
+                    ^
 
 Ren'Py Version: Ren'Py 7.4.4.1439
-Fri Jul  2 14:07:04 2021
+Mon Jul 19 23:37:14 2021

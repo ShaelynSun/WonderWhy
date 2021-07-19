@@ -10,20 +10,16 @@ label supermaket:
             "It's daytime, there are no discounts on food in the supermarket now,
             why don't you go to other places first?"
             "Return":
-                $ mt -= 1
                 jump scene_choices
     elif mt == 2:
         scene sodu
-        "It's still a bit early, why don't you come back later?"
         menu:
-            "It's daytime, there are no discounts on food in the supermarket now,
-            why don't you go to other places first?"
+            "It's still a bit early, why don't you come back later?"
             "Return":
-                $ mt -= 1
                 jump scene_choices
     elif mt == 1:
         scene son
-        "Goooood! Now supermarkets must have discounts on many foods!"
+        "Goooood! Now the supermarket must have discounts on many foods!"
         menu:
             "Let's go!!":
                 jump spmin
@@ -49,139 +45,46 @@ label spmin:
     show spm shelf
     with fade
     "Buy the food you want!"
-    define m = 1 # define the price of Milk
-    define b = 1
-    define j = 1
-    define c = 1
-    define price = 0
-    define shopping_times = 0
+    init python:
+        m = 1 # define the price of buy_milk
+        b = 1
+        j = 1
+        c = 1
+        w = 1
+        price = 0
+        buy_milk = False
+        buy_bread = False
+        buy_juice = False
+        buy_cho = False
+        buy_water = False
     jump goshopping
 
     return
 
 label goshopping:
-    if shopping_times < 5:
-        menu:
-            "Milk":
-                $ price = price + m
-                $ shopping_times += 1
-                jump Milk
-            "Bread":
-                $ price = price + b
-                $ shopping_times += 1
-                jump Bread
-            "Juice":
-                $ price = price + j
-                $ shopping_times += 1
-                jump Juice
-            "Chocolate":
-                $ price = price + c
-                $ shopping_times += 1
-                jump Chocolate
-            "Qiut":
-                jump quitshopping
-    else:
-        "You bought so many things, are you still going to buy?"
-        menu:
-            "Quit":
-                jump quitshopping
-
-    return
-
-label Milk:
-    if shopping_times < 4:
-        menu:
-            "Bread":
-                $ shopping_times += 1
-                $ price = price + b
-                jump Bread
-            "Juice":
-                $ price = price + j
-                $ shopping_times += 1
-                jump Juice
-            "Chocolate":
-                $ price = price + c
-                $ shopping_times += 1
-                jump Chocolate
-            "Qiut":
-                jump quitshopping
-    else:
-        "You bought so many things, are you still going to buy?"
-        menu:
-            "Quit":
-                jump quitshopping
-    return
-
-label Bread:
-    if shopping_times < 4:
-        menu:
-            "Milk":
-                $ price = price + m
-                $ shopping_times += 1
-                jump Milk
-            "Juice":
-                $ price = price + j
-                $ shopping_times += 1
-                jump Juice
-            "Chocolate":
-                $ price = price + c
-                $ shopping_times += 1
-                jump Chocolate
-            "Qiut":
-                jump quitshopping
-    else:
-        "You bought so many things, are you still going to buy?"
-        menu:
-            "Quit":
-                jump quitshopping
-    return
-
-label Juice:
-    if shopping_times < 4:
-        menu:
-            "Milk":
-                $ price = price + m
-                $ shopping_times += 1
-                jump Milk
-            "Bread":
-                $ price = price + b
-                $ shopping_times += 1
-                jump Bread
-            "Chocolate":
-                $ price = price + c
-                $ shopping_times += 1
-                jump Chocolate
-            "Qiut":
-                jump quitshopping
-    else:
-        "You bought so many things, are you still going to buy?"
-        menu:
-            "Quit":
-                jump quitshopping
-    return
-
-label Chocolate:
-    if shopping_times < 4:
-        menu:
-            "Milk":
-                $ price = price + m
-                $ shopping_times += 1
-                jump Milk
-            "Bread":
-                $ price = price + b
-                $ shopping_times += 1
-                jump Bread
-            "Juice":
-                $ price = price + j
-                $ shopping_times += 1
-                jump Juice
-            "Qiut":
-                jump quitshopping
-    else:
-        "You bought so many things, are you still going to buy?"
-        menu:
-            "Quit":
-                jump quitshopping
+    menu:
+        "Milk" if buy_milk == False:
+            $ price = price + m
+            $ buy_milk = True
+            jump goshopping
+        "Bread" if buy_bread == False:
+            $ price = price + b
+            $ buy_bread = True
+            jump goshopping
+        "Juice" if buy_juice == False:
+            $ price = price + j
+            $ buy_juice = True
+            jump goshopping
+        "Chocolate" if buy_cho == False:
+            $ price = price + c
+            $ buy_cho = True
+            jump goshopping
+        "Water" if buy_water== False:
+            $ price = price + w
+            $ buy_water = True
+            jump goshopping
+        "Qiut":
+            jump quitshopping
     return
 
 label quitshopping:
@@ -190,7 +93,6 @@ label quitshopping:
         menu:
             "Go back shopping":
                 jump goshopping
-
     else:
         menu:
             "You have to pay [price] pounds."
@@ -202,5 +104,5 @@ label quitshopping:
 label meet_alice:
     scene son
     with Fade(1.0, 0.0, 1.0)
-    show alice home
+    
     return
