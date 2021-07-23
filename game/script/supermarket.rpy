@@ -104,5 +104,69 @@ label quitshopping:
 label meet_alice:
     scene son
     with Fade(1.0, 0.0, 1.0)
-    
+    "This city is experiencing typhoon weather recently."
+    "The weather doesn't look good outside."
+    menu:
+        "You decide to......"
+        "Stay outside":
+            "You decide to stay outside and watch the changes in the weather."
+            scene son
+            with Fade(1.0, 0.0, 1.0)
+            "(Broadcast on TV) A typhoon has landed in our city two days ago. We sincerely hope the public could pay attention to changes in the weather."
+            "(Broadcast on TV) The government plans temporary shelters for the homeless. If you hear the news, please go to the nearest refuge immediately."
+        "Go inside":
+            "You decide to go back to the supermarket and check the weather on your phone."
+            scene sin
+            with Fade(1.0, 0.0, 1.0)
+            "Take out your phone and read the latest news."
+            "(News on phone) A typhoon has landed in our city two days ago. We sincerely hope the public could pay attention to changes in the weather."
+            "(News on phone) The government plans temporary shelters for the homeless. If you hear the news, please go to the nearest refuge immediately."
+    f "Alas, the suffering of the afflicted one, has no right to pessimism."
+    "You feel sad, but you can do nothing."
+    if buy_water:
+        "Have you decided to donate the water you just bought to the donation cart to help the homeless?"
+    elif buy_juice:
+        "Have you decided to donate the juice you just bought to the donation cart to help the homeless?"
+    else:
+        "Have you decided to buy a bottle of water and donate it to the donation cart to help the homeless?"
+    define friendly_value = 0
+    menu:
+        "Yes":
+            $ friendly_value += 1
+            "You decide to donate it. You need money, but someone may need it more to stay alive."
+        "No":
+            $ friendly_value -= 1
+            "You decided not to donate it. That's okay. Everyone is experiencing a tough time."
+    "You are passing by the donation cart. But one person has caught your attention."
+    show cart
+    show alice spm:
+        xalign 0.5
+        linear 0.5 xalign 0.0
+    "She looks different from your impression. But you still recognize her, she is {b}Alice{b}"
+    "She is looking for something in the donation cart, and she still has a bottle of water in her hand."
+    show sandwich:
+        xalign 0.5
+        linear 0.5 xalign 1.0
+    "At this time, you notice that Alice take out a {b}sandwich{/b} from the cart.
+        She is watching the {b}ingredients list{/b} of the sandwich carefully and {b}feels disgust just like she saw a bug."
+    "You are a little surprised, but you don't do anything. However, what happened next is beyond your imagination."
+    show sandwich:
+        xalign 1.0
+        linear 0.5 xalign -0.5
+    show alice spm:
+        xalign 0.5
+        linear 0.5 xalign -0.5
+    "{b}She smells the sandwich and throw it into the trash can by the supermarket door."
+    menu:
+        "You feel very ...... about this."
+        "speechless":
+            $ friendly_value += 1
+            "You feel very speechless about this. But she must have some reasons, right?"
+        "angry":
+            $ friendly_value -= 1
+            "You feel very angry about this. You feel an imbalance between the rich and ordinary people."
+    "You look at the weather that is about to rain. You still decide to {b}buy another sandwich and put it in the donate cart."
+    "The hard life will be passed. Everything will get better."
+
+    jump home2
     return
