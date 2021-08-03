@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script/home.rpy", line 144: is not terminated with a newline. (Check strings and parenthesis.)
-(Perhaps you left out a " at the end of the first line.)
-            hc = "1.You are really really bad. {nw}qwert:Overrated...I think. \nbubu:HOW dare she? \n4.Hw..so disgusting about her look. \n5.I dnt understand the hype.
+File "game/script/main.rpy", line 29: end of line expected.
+    hide screen hate_comments(hc7)
+                             ^
 
 Ren'Py Version: Ren'Py 7.4.4.1439
-Fri Jul 23 17:13:41 2021
+Mon Aug  2 20:11:54 2021

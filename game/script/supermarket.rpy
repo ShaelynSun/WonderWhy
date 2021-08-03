@@ -101,11 +101,24 @@ label quitshopping:
                 jump meet_alice
     return
 
+screen hate_comments(hc):
+    style_prefix "hate_comments"
+    frame:
+        area (320, 200, 450, 210)
+        viewport:
+            scrollbars "vertical"
+            mousewheel True
+            draggable True
+            vbox:
+                text "[hc]"
+default hc = 0
+
 label meet_alice:
     scene son
     with Fade(1.0, 0.0, 1.0)
     "This city is experiencing typhoon weather recently."
     "The weather doesn't look good outside."
+    define stay_outside = True
     menu:
         "You decide to......"
         "Stay outside":
@@ -115,6 +128,7 @@ label meet_alice:
             "(Broadcast on TV) A typhoon has landed in our city two days ago. We sincerely hope the public could pay attention to changes in the weather."
             "(Broadcast on TV) The government plans temporary shelters for the homeless. If you hear the news, please go to the nearest refuge immediately."
         "Go inside":
+            $ stay_outside = False
             "You decide to go back to the supermarket and check the weather on your phone."
             scene sin
             with Fade(1.0, 0.0, 1.0)
@@ -129,7 +143,6 @@ label meet_alice:
         "Have you decided to donate the juice you just bought to the donation cart to help the homeless?"
     else:
         "Have you decided to buy a bottle of water and donate it to the donation cart to help the homeless?"
-    define friendly_value = 0
     menu:
         "Yes":
             $ friendly_value += 1
@@ -159,7 +172,7 @@ label meet_alice:
     "{b}She smells the sandwich and throw it into the trash can by the supermarket door."
     menu:
         "You feel very ...... about this."
-        "speechless":
+        "nothing":
             $ friendly_value += 1
             "You feel very speechless about this. But she must have some reasons, right?"
         "angry":
@@ -168,5 +181,25 @@ label meet_alice:
     "You look at the weather that is about to rain. You still decide to {b}buy another sandwich and put it in the donate cart."
     "The hard life will be passed. Everything will get better."
 
-    jump home2
+    scene bedroom night
+    with Fade(1.0, 0.0, 1.0)
+    "You return your home."
+    "But, still feel a little bit aggrieved at the computer desk."
+    "So you decide to look up some information about Alice."
+    show cpt alice
+    "You specifically look at her comment area."
+    python:
+        hc = "{b}unknown:{/b} You are really really bad.\n{b}qwert:{/b} Overrated...I think.\n{b}bubu:{/b} HOW dare she?\n{b}ltleFrog{/b} Hw..so disgusting about her look.\n{b}asdf:{/b} I dnt understand the hype.\n{b}zxcv:{/b}How much did she pay for the job?\n{b}poiuy:{/b}Does anyone know she is also the brand spokesman of FLORIST perfume in 2020?\n{b}lkjh:{/b}OMG, is FLORIST crazy? Their perfume won't give me any good impression then.\n{b}Hahahazel:{/b}Serious? She is just a model. She is a very kind person in her life. Why so mean?\n{b}unknown2:{/b}You know what. The light bulb in my house broke down today. It must be done by Alice;)\n{b}mnbv:{/b}hhhahah copy that. covid-19 in China was also made by Alice. Leave the earth."
+    show screen hate_comments(hc)
+    "There are really many malicious comments about Alice on the Internet. Many comments criticized her appearance and skin color,"
+    "But you noticed one thing: everyone attacked Alice {b}without evidence{/b}. Someone explained that Alice is a kind person in life."
+    "This caught your attention. Because her actions in the supermarket prove that she is not a nice person."
+    hide cpt alice
+    hide screen hate_comments
+    menu:
+        "So you decide to......({color=#f00}You can save your progress here.{/color})"
+        "Expose her":
+            jump main1
+        "Give up exposure":
+            jump main2
     return

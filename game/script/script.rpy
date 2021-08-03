@@ -1,5 +1,6 @@
 define a = Character("Alice ")
-define c = Character("Charles")
+define pressure_value = 0
+define friendly_value = 0
 
 define config.say_attribute_transition = dissolve
 
@@ -14,7 +15,7 @@ label start:
     # play music "music/bgm/clean morning.mp3"
     scene city day
     with dissolve
-    "Hi! How are you? Welcome to {b} WonderWhy {b}"
+    "Hi! How are you? Welcome to {b} WonderWhy {\b}"
     "The name of WonderWhy is inspired by ‘Wonderland’.
         This is like a virtual world. But......"
     "But who knows? Can we really clarify the boundary between virtual and reality?"
@@ -28,18 +29,15 @@ label start:
             if len_name != 0:
                 p_name = input_name
                 break
-    define p_name = "Finn"
     define finn_is_f = True
-    define pressure_value = 0
     define f = Character("[p_name]")
-    "I'm so glad to see you here! {b}[p_name]{b}"
-    define finn_is_f = True
+    "Hi, {b}[p_name]{/b} I'm so glad to see you here! "
     menu:
         "Please confirm your gender to generate your look."
-        "Male":
+        "Boy":
             $ finn_is_f = False
             call screen create_male
-        "Female":
+        "Girl":
             $ finn_is_f = True
             call screen create_female
 
