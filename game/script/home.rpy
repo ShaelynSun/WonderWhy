@@ -42,7 +42,7 @@ label home:
             if choose_movie:
                 "Yup. The name of your favorite movie is [m_name]!"
             else:
-                call choose_fav_movie
+                call choose_fav_movie from _call_choose_fav_movie
                 "Yup. The name of your favorite movie is [m_name]!"
             "In fact, you often write comments for your favorite movies, music, and books."
             define init_comment_style = 0
@@ -71,7 +71,7 @@ label home:
             if choose_movie:
                 "Yup. The name of your favorite movie is [m_name]!"
             else:
-                call choose_fav_movie
+                call choose_fav_movie from _call_choose_fav_movie_1
                 "Yup. The name of your favorite movie is [m_name]!"
             "Oh wait, [m_name] is currently available, and......the shooting of [m_name]2 will start next month?"
             "And.....and your favorite character actually chose the model Alice?"
@@ -93,6 +93,8 @@ label home:
                     f "Especially the skin color. She is not a white girl at all."
                 "The appearance":
                     f "Especially the appearance. She looks so innocent. Jessica ought to look like a fox."
+                "Nothing":
+                    "It seems like there's nothing about Alice that doesn't fit the role. Because the character is all up to the actor."
             f "Except they are all rich. Goodness. This may be the only similarity. Anyway, I have recognized many luxury brands that I haven't seen in her MeTube."
             "(A video of Alice looking frightened after seeing a bug)"
             f "Mmmm, yes. Jessica is also afraid of bugs. Is this why the director thinks she is suitable for Jessica? Can't believe it."

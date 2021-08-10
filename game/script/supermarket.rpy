@@ -32,7 +32,7 @@ label supermaket:
                 $ mt = 3
                 jump scene_choices
             "Skip these pressure test":
-                jump meet_alice # not yet
+                jump meet_alice
     return
 
 image black:
@@ -46,10 +46,10 @@ label spmin:
     with fade
     "Buy the food you want!"
     init python:
-        m = 1 # define the price of buy_milk
+        m = 1.5 # define the price of buy_milk
         b = 1
-        j = 1
-        c = 1
+        j = 2.0
+        c = 0.75
         w = 1
         price = 0
         buy_milk = False
@@ -83,7 +83,7 @@ label goshopping:
             $ price = price + w
             $ buy_water = True
             jump goshopping
-        "Qiut":
+        "Quit":
             jump quitshopping
     return
 
@@ -97,7 +97,7 @@ label quitshopping:
         menu:
             "You have to pay [price] pounds."
             "Pay":
-                "Sccess to pay"
+                "Success to pay"
                 jump meet_alice
     return
 
@@ -189,7 +189,7 @@ label meet_alice:
     show cpt alice
     "You specifically look at her comment area."
     python:
-        hc = "{b}unknown:{/b} You are really really bad.\n{b}qwert:{/b} Overrated...I think.\n{b}bubu:{/b} HOW dare she?\n{b}ltleFrog{/b} Hw..so disgusting about her look.\n{b}asdf:{/b} I dnt understand the hype.\n{b}zxcv:{/b}How much did she pay for the job?\n{b}poiuy:{/b}Does anyone know she is also the brand spokesman of FLORIST perfume in 2020?\n{b}lkjh:{/b}OMG, is FLORIST crazy? Their perfume won't give me any good impression then.\n{b}Hahahazel:{/b}Serious? She is just a model. She is a very kind person in her life. Why so mean?\n{b}unknown2:{/b}You know what. The light bulb in my house broke down today. It must be done by Alice;)\n{b}mnbv:{/b}hhhahah copy that. covid-19 in China was also made by Alice. Leave the earth."
+        hc = "(Scroll down)\n{b}unknown:{/b} You are really really bad.\n{b}qwert:{/b} Overrated...I think.\n{b}bubu:{/b} HOW dare she?\n{b}ltleFrog{/b} Hw..so disgusting about her look.\n{b}asdf:{/b} I dnt understand the hype.\n{b}zxcv:{/b}How much did she pay for the job?\n{b}poiuy:{/b}Does anyone know she is also the brand spokesman of FLORIST perfume in 2020?\n{b}lkjh:{/b}OMG, is FLORIST crazy? Their perfume won't give me any good impression then.\n{b}Hahahazel:{/b}Serious? She is just a model. She is a very kind person in her life. Why so mean?\n{b}unknown2:{/b}You know what. The light bulb in my house broke down today. It must be done by Alice;)\n{b}mnbv:{/b}hhhahah copy that. covid-19 in China was also made by Alice. Leave the earth."
     show screen hate_comments(hc)
     "There are really many malicious comments about Alice on the Internet. Many comments criticized her appearance and skin color,"
     "But you noticed one thing: everyone attacked Alice {b}without evidence{/b}. Someone explained that Alice is a kind person in life."
@@ -197,7 +197,7 @@ label meet_alice:
     hide cpt alice
     hide screen hate_comments
     menu:
-        "So you decide to......({color=#f00}You can save your progress here.{/color})"
+        "So you decide to......({color=#f00}You can save your progress here. And come back later to re-select another option.{/color})"
         "Expose her":
             jump main1
         "Give up exposure":

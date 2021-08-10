@@ -1,38 +1,22 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script/main.rpy", line 24, in script
-    show screen hate_comments(hc7)
-  File "renpy/common/000statements.rpy", line 540, in execute_show_screen
-    args, kwargs = a.evaluate()
-  File "game/script/main.rpy", line 24, in <module>
-    show screen hate_comments(hc7)
-NameError: name 'hc7' is not defined
+  File "game/script/main.rpy", line 22, in script
+    return
+Exception: Could not find return label (u'game/script/main.rpy', 1628607418, 17).
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script/main.rpy", line 24, in script
-    show screen hate_comments(hc7)
-  File "/Applications/renpy-7.4.4-sdk/renpy/ast.py", line 1969, in execute
-    self.call("execute")
-  File "/Applications/renpy-7.4.4-sdk/renpy/ast.py", line 1957, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "/Applications/renpy-7.4.4-sdk/renpy/statements.py", line 278, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 540, in execute_show_screen
-    args, kwargs = a.evaluate()
-  File "/Applications/renpy-7.4.4-sdk/renpy/ast.py", line 191, in evaluate
-    args.append(renpy.python.py_eval(v, locals=scope))
-  File "/Applications/renpy-7.4.4-sdk/renpy/python.py", line 2249, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "/Applications/renpy-7.4.4-sdk/renpy/python.py", line 2242, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "game/script/main.rpy", line 24, in <module>
-    show screen hate_comments(hc7)
-NameError: name 'hc7' is not defined
+  File "game/script/main.rpy", line 22, in script
+    return
+  File "/Applications/renpy-7.4.4-sdk/renpy/ast.py", line 1521, in execute
+    next_node(renpy.game.context().lookup_return(pop=True))
+  File "/Applications/renpy-7.4.4-sdk/renpy/execution.py", line 710, in lookup_return
+    raise Exception("Could not find return label {!r}.".format(self.return_stack[-1]))
+Exception: Could not find return label (u'game/script/main.rpy', 1628607418, 17).
 
 Darwin-20.6.0-x86_64-i386-64bit
 Ren'Py 7.4.4.1439
 WonderWhy 1.0
-Mon Aug  2 20:10:24 2021
+Tue Aug 10 22:59:55 2021

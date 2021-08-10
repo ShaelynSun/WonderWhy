@@ -29,28 +29,30 @@ label start:
             if len_name != 0:
                 p_name = input_name
                 break
-    define finn_is_f = True
+    define finn_look = 0
     define f = Character("[p_name]")
     "Hi, {b}[p_name]{/b} I'm so glad to see you here! "
     menu:
-        "Please confirm your gender to generate your look."
+        "Please generate the look you prefer."
         "Boy":
-            $ finn_is_f = False
+            $ finn_look = 0
             call screen create_male
+            $ quick_menu = True
+            show finn_m:
+                pos(350,30)
+                zoom 0.5
+            "Nice look!"
         "Girl":
-            $ finn_is_f = True
+            $ finn_look = 1
             call screen create_female
-
-    $ quick_menu = True
-    if finn_is_f:
-        show finn_f:
-            pos(350, 30)
-            zoom 0.5
-    else:
-        show finn_m:
-            pos(350,30)
-            zoom 0.5
-    "Nice look!"
+            $ quick_menu = True
+            show finn_f:
+                pos(350, 30)
+                zoom 0.5
+            "Nice look!"
+        "Skip":
+            $ finn_look = 2
+            "No worries."
     "Now try to go to these places to learn about your life."
     define mt = 3
     define company_done = False

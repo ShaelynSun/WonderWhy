@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script/main.rpy", line 29: end of line expected.
-    hide screen hate_comments(hc7)
-                             ^
+File "game/script/main.rpy", line 4: expected menuitem
+    scene bedroom night
+    ^
 
 Ren'Py Version: Ren'Py 7.4.4.1439
-Mon Aug  2 20:11:54 2021
+Tue Aug 10 21:10:50 2021

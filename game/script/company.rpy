@@ -136,7 +136,7 @@ label company:
                 m1 "What's wrong again? [p_name], you can't complete even one job by yourself right?"
                 menu:
                     "I just...checking the printer......":
-                        f "I just checking the printer, it seems it is stuck."
+                        f "I am just checking the printer. It seems stuck."
                         show m1 calm
                         m1 "No explanation. God bless me I can see my files within 5 minutes."
                     "Right now":
@@ -160,39 +160,51 @@ label company:
     show m1 smile
     m1 "Except......you, [p_name]."
     show m1 calm
-    m1 "Don't try to ask me why, I can't stand you to enjoy the food with the salary we paid you."
+    m1 "Because of your inefficiency, I need you to finish your work first instead of getting together with us."
     show m1 calm:
         yanchor 0.0
         linear 1.0 yanchor -0.05
-    m1 "Because you are not deserved."
+    m1 "Calm down. This is also an opportunity for you to exercise and grow in your abilities."
+    m1 "Lack of ability requires more effort than others, doesn't it?"
     show m1 smile:
         yanchor -0.05
         linear 1.0 yanchor 0.0
-    m1 "When you leave the office, remember to clean the room and turn off the light."
+    m1 "Go for it."
     show m1 smile:
         xalign 0.5
         linear 1.0 xalign 2.0
-    " "
     "You are the only one left in the office."
     "In fact, this is not the first time you have been treated like this."
-    if finn_is_f:
-        "The reason is obvious. You as a farm girl who has never attended a university and luckily get an internship."
-    else:
-        "The reason is obvious. You as a farm boy who has never attended a university and luckily get an internship."
-    "The salary is low, but, but you are saving money."
-    "Maybe you can go to college within two years. Or maybe one year."
+    "I need you to know this is one of the more common types of stress in the workplace."
+    "From bosses or colleagues. Their main concern is that the benefits include the company's and their own."
+    "It's reasonable that these people won't treat you with 100 percent friendliness."
+    "It's important that you need to get used to it and stay in a good frame of mind."
+    "They're just minding that you haven't been to university but are missing out on getting this internship."
+    "But you're saving up for tuition. Maybe you can go to college within two years. Or maybe one year."
+    "After a while......"
+    show m1 calm:
+        xalign 2.0
+        linear 1.0 xalign 0.5
+    m1 "How's it going?"
+    f "Pretty good. I got most of it done. But I still have a few professional questions I'd like to ask you."
+    f "May I, Marian?"
+    m1 "No......."
+    show m1 smile
+    m1 "(Laugh) Not now. We accidentally bought an extra salad. Your current task is to eat it first. I need you to finish it as soon as possible before you come back to me with your questions. Understand?"
+    show m1 ssmile
+    f "Get it! Thank you Marian."
+    m1 "Come on. Eat up."
+    hide m1 ssmile
+    "Malice in life is everywhere. But we should always believe that there is no 100 percent friendliness and no 100 percent malice."
     menu:
+        "How do you feel about your experience with the company?"
         "I don't care":
             $ pressure_value -= 1
             f "I don't care. I will cut down some more unnecessary expenses."
             f "When I get enough money, I will leave this place."
-        "Feel unfair":
+        "Still feel unfair":
             $ pressure_value += 1
             f "I get this internship opportunity by my own efforts. I take a salary that matches my efforts."
             f "Why can't everyone be more friendly?"
-    menu:
-        "Go to other places."
-        "Return":
-            jump scene_choices
-
+    jump scene_choices
     return
