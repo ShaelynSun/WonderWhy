@@ -1,33 +1,62 @@
-Wed Aug 11 00:06:58 2021
+Tue Aug 24 14:35:23 2021
 Darwin-20.6.0-x86_64-i386-64bit
 Ren'Py 7.4.4.1439
  
 
 Bootstrap to the start of init.init took 0.09s
 Early init took 0.00s
-Loader init took 0.01s
-Loading error handling took 0.14s
-Loading script took 1.74s
-Loading save slot metadata. took 0.03s
+Loader init took 0.02s
+Loading error handling took 0.02s
+Loading script took 0.12s
+Loading save slot metadata. took 0.04s
 Loading persistent took 0.00s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
-Running init code took 0.14s
-Loading analysis data took 0.00s
-Analyze and compile ATL took 0.01s
+Running init code took 0.04s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
 Index archives took 0.00s
-Backing up script files to '/Users/sxy/Library/RenPy/backups/WonderWhy':
-Dump and make backups. took 0.07s
+Dump and make backups. took 0.06s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc. took 0.04s
+Initial gc. took 0.02s
 DPI scale factor: 1.000000
 Creating interface object took 0.00s
 Cleaning stores took 0.00s
-Init translation took 0.05s
-Build styles took 0.01s
-Load screen analysis took 0.00s
-Analyze screens took 0.03s
-Save screen analysis took 0.08s
-Prepare screens took 0.16s
-Save pyanalysis. took 0.09s
-Save bytecode. took 0.03s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.02s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
+Prepare screens took 0.07s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.00s
+Running _start took 0.00s
+Performance test:
+Interface start took 0.21s
+
+Initializing gl renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'Intel Inc.'
+Renderer: 'Intel(R) Iris(TM) Plus Graphics OpenGL Engine'
+Version: '2.1 INTEL-16.5.2'
+Display Info: None
+Number of texture units: 16
+Using shader environment.
+Using FBO RTT.
+Root FBO is: 0
+FBO Maximum Texture Size: 2048
+Using gl renderer.
+Texture testing:
+- Hardware max texture size: 16384
+- 64px textures work.
+- 128px textures work.
+- 256px textures work.
+- 512px textures work.
+- 1024px textures work.
+- 2048px textures work.
+Screen sizes: virtual=(1280, 720) physical=(1248, 702) drawable=(2496, 1404)
+Root FBO is: 0
+FBO Maximum Texture Size: 2048
+Total time until interface ready: 1.03922796249s
