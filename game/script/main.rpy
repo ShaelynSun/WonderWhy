@@ -81,21 +81,21 @@ label main2:
             $ id_is_bystander = False
             "You decide to take her side, even though you don't know about her. But bullying a girl with words on the internet like that is always wrong."
     "You open up some bad reviews about her."
-    call assessment_quiz from _call_assessment_quiz
+    call assessment_quiz
     # define beh = 0
     # $ beh = 10
     if beh < 1:
         "You're not making a good choice. I don't know if you're serious about completing these questions. So do you want to do them again?"
         menu:
             "Yes":
-                call assessment_quiz from _call_assessment_quiz_1
+                call assessment_quiz
             "No":
                 "Fine, let's go on."
     elif 0 < beh < 7:
         "You have a good finish on the quiz, do you plan to redo it to make it perfect?"
         menu:
             "Yes":
-                call assessment_quiz from _call_assessment_quiz_2
+                call assessment_quiz
             "No":
                 "Fine, let's go on."
     else:

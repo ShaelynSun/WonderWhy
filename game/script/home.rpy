@@ -42,7 +42,7 @@ label home:
             if choose_movie:
                 "Yup. The name of your favorite movie is [m_name]!"
             else:
-                call choose_fav_movie from _call_choose_fav_movie
+                call choose_fav_movie
                 "Yup. The name of your favorite movie is [m_name]!"
             "In fact, you often write comments for your favorite movies, music, and books."
             define init_comment_style = 0
@@ -71,7 +71,7 @@ label home:
             if choose_movie:
                 "Yup. The name of your favorite movie is [m_name]!"
             else:
-                call choose_fav_movie from _call_choose_fav_movie_1
+                call choose_fav_movie
                 "Yup. The name of your favorite movie is [m_name]!"
             "Oh wait, [m_name] is currently available, and......the shooting of [m_name]2 will start next month?"
             "And.....and your favorite character actually chose the model Alice?"
