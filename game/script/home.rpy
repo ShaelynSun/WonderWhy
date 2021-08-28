@@ -19,9 +19,10 @@ label home:
                 $ mt = 3
                 jump scene_choices
             "Skip these pressure test":
-                jump meet_alice # not yet
+                jump meet_alice
     "You have returned your house."
     "Choose some details to learn about your life."
+    # the boolean values are used to the appreance of the menu
     define choose_movie = False
     define m_name = "WonderWhy"
     define check_alice_on_phone = False
@@ -46,6 +47,7 @@ label home:
                 "Yup. The name of your favorite movie is [m_name]!"
             "In fact, you often write comments for your favorite movies, music, and books."
             define init_comment_style = 0
+            # values not used yet
             menu:
                 "And those comments are very......"
                 "Sharp":

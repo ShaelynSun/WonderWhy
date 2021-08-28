@@ -1,11 +1,15 @@
-define a = Character("Alice ")
+# Define characters
+define a = Character("Alice")
+# set values but not used yet currently
 define pressure_value = 0
 define friendly_value = 0
-
+# set all transition as dissolve
 define config.say_attribute_transition = dissolve
 
+# The logo bg before the game starts
 image purple:
     "#281438"
+# The uni logo before the game starts
 image logo2:
     contains:
         "images/others/logo.jpeg"
@@ -21,6 +25,7 @@ label start:
     "But who knows? Can we really clarify the boundary between virtual and reality?"
     "Now, may I have your name?"
     python:
+        # Ask player to enter his/her name
         p_name = "Finn"
         while True:
             input_name = renpy.input("Please enter your name here: ")
@@ -29,6 +34,8 @@ label start:
             if len_name != 0:
                 p_name = input_name
                 break
+
+    # Here the attribute is added to determine whether the player has chosen gender.
     define finn_look = 0
     define f = Character("[p_name]")
     "Hi, {b}[p_name]{/b} I'm so glad to see you here! "
@@ -54,7 +61,9 @@ label start:
             $ finn_look = 2
             "No worries."
     "Now try to go to these places to learn about your life."
+    # "mt" value determines the time of scene (day, dusk, night)
     define mt = 3
+    # boolean value determines that player has been or not. The display of the menu.
     define company_done = False
     define home_done = False
     jump scene_choices
@@ -62,7 +71,7 @@ label start:
     return
 
 label scene_choices:
-
+    # the time of the scene
     if mt == 3:
         scene city day
     elif mt == 2:
@@ -85,7 +94,7 @@ label scene_choices:
     return
 
 
-
+# the purple scene before starting the game with the uni logo
 label before_main_menu:
     scene purple
     show logo2

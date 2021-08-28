@@ -1,5 +1,6 @@
 label company:
     define m1 = Character("Marian")
+    # define an unknown name for display as '???'
     define uk = Character("???")
 
     if mt == 3:
@@ -41,6 +42,7 @@ label company:
             $ wrong_name = "Daisy"
 
             python:
+                # reverse player's name
                 original_name = list(p_name)
                 reversed_name = original_name.reverse()
                 reversed_name = ''.join(original_name)
@@ -196,6 +198,7 @@ label company:
     m1 "Come on. Eat up."
     hide m1 ssmile
     "Malice in life is everywhere. But we should always believe that there is no 100 percent friendliness and no 100 percent malice."
+    # this choices determine the pressure value (not used yet)
     menu:
         "How do you feel about your experience with the company?"
         "I don't care":

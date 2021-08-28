@@ -222,7 +222,7 @@ label assessment_quiz:
         "Delete it without explanation.":
             $ beh += 1
             "You deleted the words but did not explain them. Your fans still think you're right. More people think Alice is really bad."
-        "Delete it and post anouther tweet to explain.":
+        "Delete it and post another tweet to explain.":
             $ beh += 2
             "You deleted it and gave an explanation for this message. You made your position clear i.e. to protect Alice from bullying. Your fans believed you."
         "You ask for help to find this hacker and attack him.":
